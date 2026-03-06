@@ -1,0 +1,534 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap');
+
+*{
+  margin: 0;
+  padding: 0;
+  font-family: 'Montserrat', sans-serif;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  overflow: hidden;
+}
+
+#background-gradient{
+  height: 100vh;
+  width: 100%;
+  background: linear-gradient(135deg,rgb(0, 153, 255),rgb(0, 0, 68));
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+#header-flex{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom-left-radius: 18px;
+  border-bottom-right-radius: 18px;
+  background-color: rgb(0, 0, 68);
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+  flex-shrink: 0;
+}
+
+#wordaholics-logo{
+  height: 28px;
+  width: 28px;
+}
+
+#wordaholics-logo-container{
+  display: flex;
+  align-items: center;
+  gap: 7.25px;
+  padding-left: 5px;
+}
+
+#heading-flex{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 3px;
+  background-color: white;
+  width: auto;
+  min-width: 220px;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+  padding: 8px 20px;
+}
+
+#header-title{
+  font-size: 1.65rem;
+}
+
+#header-subtitle{
+  font-size: 0.88rem;
+}
+
+#right-header-flex{
+  display: flex;
+  justify-content: right;
+  align-items: center;
+  padding: 12px 18px;
+}
+
+.header-button{
+  background-color: white;
+  border: none;
+  padding: 8px 13px;
+  border-radius: 12px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 0.9rem;
+  transition: all 0.25s ease-in;
+}
+
+.header-button:hover{
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+  background-color: rgb(0, 153, 255);
+  color: white;
+  transform: translateY(-3px);
+}
+
+#wordaholics-selector-flex{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+#wordaholics-length-selector{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  padding: 4px 10px 8px;
+  border-bottom-left-radius: 18px;
+  border-bottom-right-radius: 18px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+#difficulty-menu{
+  margin-top: 4px;
+  margin-bottom: 6px;
+  padding: 6px 8px;
+  border-radius: 8px;
+  border: none;
+  font-size: 0.85rem;
+}
+
+#difficulty-select-button{
+  background-color: white;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 0.85rem;
+  font-weight: 600;
+  transition: all 0.25s ease-in;
+}
+
+#difficulty-select-button:hover{
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+  background-color: rgb(0, 153, 255);
+  color: white;
+  transform: translateY(-3px);
+}
+
+#play-area-flex{
+  margin-top: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex: 1;
+}
+
+#play-area-div{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  padding: 14px;
+  margin: 10px;
+  border-radius: 20px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+  width: min(90vw, 340px);
+}
+
+#wordaholics-title{
+  margin-bottom: 10px;
+  font-size: 1.3rem;
+  text-align: center;
+}
+
+.four-grid{
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 4px;
+  perspective: 600px;
+}
+
+.five-grid{
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 4px;
+  perspective: 600px;
+}
+
+.six-grid{
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 4px;
+  perspective: 600px;
+}
+
+.grid-box{
+  width: clamp(36px, 9vw, 50px);
+  height: clamp(36px, 9vw, 50px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.2rem;
+  font-weight: 600;
+  background-color: rgb(0, 0, 68);
+  color: white;
+  border-radius: 10px;
+  transition: all 0.25s ease-in;
+}
+
+.grid-box:hover{
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+  transform: translateY(-3px);
+}
+
+@keyframes flipReveal {
+  0%   { transform: scaleX(1); }
+  40%  { transform: scaleX(0); }
+  60%  { transform: scaleX(0); }
+  100% { transform: scaleX(1); }
+}
+
+.green{
+  background-color: seagreen;
+  animation: flipReveal 0.55s cubic-bezier(0.45, 0, 0.55, 1) forwards;
+}
+
+.yellow{
+  background-color: goldenrod;
+  animation: flipReveal 0.55s cubic-bezier(0.45, 0, 0.55, 1) forwards;
+}
+
+#input-div{
+  margin-top: 18px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  gap: 0;
+}
+
+#answer-input-field{
+  background-color: #f0f2f5;
+  padding: 11px 14px;
+  border: 2px solid #e0e0e0;
+  border-right: none;
+  border-top-left-radius: 14px;
+  border-bottom-left-radius: 14px;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+  width: 100%;
+  font-size: 0.9rem;
+  font-family: 'Montserrat', sans-serif;
+  color: #111;
+  transition: border-color 0.2s ease;
+}
+
+#answer-input-field::placeholder {
+  color: #aaa;
+  font-size: 0.85rem;
+}
+
+#answer-input-field:focus{
+  outline: none;
+  border-color: rgb(0, 153, 255);
+  background-color: #fff;
+  box-shadow: 0 0 0 3px rgba(0, 153, 255, 0.18), 0 2px 8px rgba(0, 153, 255, 0.10);
+  transform: scaleY(1.03);
+  transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.15s ease;
+}
+
+#answer-submit-button{
+  background-color: rgb(0, 0, 68);
+  border-top-right-radius: 14px;
+  border-bottom-right-radius: 14px;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  transition: all 0.25s ease-in;
+  padding: 11px 14px;
+  color: white;
+  border-left: none;
+  border: 3px solid rgb(0, 0, 68);
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.8rem;
+  font-weight: 600;
+  cursor: pointer;
+  white-space: nowrap;
+  min-width: 70px;
+  max-width: 120px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  flex-shrink: 0;
+}
+
+#answer-submit-button:hover{
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+  background-color: rgb(0, 100, 200);
+  border-color: rgb(0, 100, 200);
+}
+
+#give-up-div{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px;
+}
+
+#give-up-button{
+  background-color: white;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 12px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 0.85rem;
+  transition: all 0.25s ease-in;
+}
+
+#give-up-button:hover{
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+  background-color: rgb(0, 153, 255);
+  color: white;
+  transform: translateY(-3px);
+}
+
+.announcement-div{
+  margin-top: 8px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#play-again-button{
+  background-color: white;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 12px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 0.85rem;
+  transition: all 0.25s ease-in;
+  margin-top: 8px;
+}
+
+#play-again-button:hover{
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+  background-color: rgb(0, 153, 255);
+  color: white;
+  transform: translateY(-3px);
+}
+
+.active{
+  display: block;
+}
+
+.inactive{
+  display: none;
+}
+
+#info-flex{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 15px;
+}
+
+#info-div{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  padding: 16px;
+  border-radius: 20px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+  width: min(90vw, 340px);
+  margin: 15px;
+}
+
+#info-heading{
+  margin-bottom: 10px;
+  font-size: 1.4rem;
+  text-align: center;
+}
+
+.info-tile{
+  margin-top: 12px;
+  margin-bottom: 4px;
+}
+
+#developer-name{
+  margin-top: 14px;
+  font-size: 0.9rem;
+  color: gray;
+}
+
+@media (max-width: 480px) {
+  html, body {
+    height: 100dvh;
+  }
+
+  #background-gradient {
+    height: 100dvh;
+  }
+
+  #answer-input-field {
+    font-size: 16px;
+    padding: 8px 10px;
+  }
+
+  #wordaholics-logo {
+    height: 20px;
+    width: 20px;
+  }
+
+  #wordaholics-logo-container {
+    gap: 5px;
+    padding-left: 8px;
+  }
+
+  #header-flex {
+    align-items: stretch;
+  }
+
+  #heading-flex {
+    min-width: 0;
+    padding: 2px 12px;
+    gap: 0px;
+  }
+
+  #header-title {
+    font-size: 1.1rem;
+    line-height: 1.2;
+  }
+
+  #header-subtitle {
+    font-size: 0.65rem;
+    line-height: 1.2;
+  }
+
+  #right-header-flex {
+    padding: 6px 10px;
+    align-items: center;
+  }
+
+  .header-button {
+    font-size: 0.7rem;
+    padding: 5px 8px;
+    border-radius: 9px;
+    background-color: white !important;
+    color: black !important;
+    box-shadow: none !important;
+    transform: none !important;
+    transition: none !important;
+  }
+
+  #give-up-button,
+  #play-again-button {
+    background-color: rgb(0, 153, 255);
+    color: white;
+    box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.2);
+    padding: 6px 12px;
+    font-size: 0.8rem;
+    transition: none;
+  }
+
+  #give-up-button:hover,
+  #play-again-button:hover,
+  .header-button:hover {
+    transform: none;
+    box-shadow: none;
+  }
+
+  #give-up-button:hover,
+  #play-again-button:hover {
+    background-color: rgb(0, 153, 255);
+    color: white;
+  }
+
+  #give-up-button:active,
+  #play-again-button:active {
+    background-color: rgb(0, 120, 210);
+    transform: scale(0.97);
+  }
+
+  #wordaholics-length-selector {
+    padding: 3px 8px 6px;
+  }
+
+  #difficulty-menu {
+    font-size: 0.78rem;
+    padding: 4px 6px;
+    margin-bottom: 4px;
+  }
+
+  #difficulty-select-button {
+    font-size: 0.78rem;
+    padding: 4px 10px;
+  }
+
+  #play-area-flex {
+    margin-top: 15px;
+  }
+
+  #play-area-div {
+    padding: 10px;
+    margin: 6px;
+    border-radius: 16px;
+    width: min(94vw, 340px);
+  }
+
+  #wordaholics-title {
+    font-size: 1rem;
+    margin-bottom: 7px;
+  }
+
+  .grid-box {
+    width: clamp(28px, 11.5vw, 42px);
+    height: clamp(28px, 11.5vw, 42px);
+    font-size: 0.95rem;
+    border-radius: 8px;
+  }
+
+  .four-grid, .five-grid, .six-grid {
+    gap: 3px;
+  }
+
+  #input-div {
+    margin-top: 10px;
+  }
+
+  #answer-submit-button {
+    font-size: 0.72rem;
+    padding: 8px 10px;
+    min-width: 60px;
+    border: 4px solid rgb(0, 0, 68);
+  }
+
+  #give-up-div {
+    margin-top: 7px;
+  }
+}

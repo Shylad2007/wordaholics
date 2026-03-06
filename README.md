@@ -14,6 +14,7 @@ https://unrivaled-starlight-3d168a.netlify.app/
 * Support for multiple word lengths (4, 5, and 6 letter words)
 * Clean and responsive user interface
 * Component-based architecture using React
+* 9,000+ built-in words dictionary
 
 ## Tech Stack
 
